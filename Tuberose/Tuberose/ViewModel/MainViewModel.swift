@@ -22,11 +22,14 @@ class MainViewModel: NSObject {
 extension MainViewModel: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return nameArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: MainCell.identifier, for: indexPath) as? MainCell {
+            if indexPath.row < nameArray.count {
+                cell.mainTitle?.text = nameArray[indexPath.row]
+            }
             return cell
         }
         return UITableViewCell()
@@ -37,6 +40,6 @@ extension MainViewModel: UITableViewDataSource {
 //MARK: UITableViewDelegate
 extension MainViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 80
     }
 }

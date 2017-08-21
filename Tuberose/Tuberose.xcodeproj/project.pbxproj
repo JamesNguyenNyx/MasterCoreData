@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8D9249761F4B2391007A0373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9249641F4B2391007A0373 /* AppDelegate.swift */; };
-		8D9249781F4B2391007A0373 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D92496B1F4B2391007A0373 /* Info.plist */; };
 		8D9249791F4B2391007A0373 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D92496E1F4B2391007A0373 /* Assets.xcassets */; };
 		8D92497A1F4B2391007A0373 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D92496F1F4B2391007A0373 /* LaunchScreen.storyboard */; };
 		8D92497B1F4B2391007A0373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D9249711F4B2391007A0373 /* Main.storyboard */; };
@@ -29,6 +28,13 @@
 		8D9249A11F4B2C2F007A0373 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D92499F1F4B2C2F007A0373 /* MainCell.swift */; };
 		8D9249A21F4B2C2F007A0373 /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9249A01F4B2C2F007A0373 /* MainCell.xib */; };
 		8D9249A41F4B2C9E007A0373 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9249A31F4B2C9E007A0373 /* MainViewModel.swift */; };
+		8D9249AE1F4B344F007A0373 /* ic_manu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9249AB1F4B344F007A0373 /* ic_manu.png */; };
+		8D9249AF1F4B344F007A0373 /* ic_manu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9249AC1F4B344F007A0373 /* ic_manu@2x.png */; };
+		8D9249B01F4B344F007A0373 /* ic_manu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9249AD1F4B344F007A0373 /* ic_manu@3x.png */; };
+		8D9249B21F4B3700007A0373 /* DefineStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9249B11F4B3700007A0373 /* DefineStrings.swift */; };
+		8D9249B41F4B38C4007A0373 /* UIViewGestureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9249B31F4B38C4007A0373 /* UIViewGestureExtension.swift */; };
+		8D9249B61F4B3966007A0373 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9249B51F4B3966007A0373 /* UIViewControllerExtension.swift */; };
+		8D9249B81F4B3E61007A0373 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9249B71F4B3E61007A0373 /* MainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +61,13 @@
 		8D92499F1F4B2C2F007A0373 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		8D9249A01F4B2C2F007A0373 /* MainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
 		8D9249A31F4B2C9E007A0373 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		8D9249AB1F4B344F007A0373 /* ic_manu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_manu.png; sourceTree = "<group>"; };
+		8D9249AC1F4B344F007A0373 /* ic_manu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_manu@2x.png"; sourceTree = "<group>"; };
+		8D9249AD1F4B344F007A0373 /* ic_manu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_manu@3x.png"; sourceTree = "<group>"; };
+		8D9249B11F4B3700007A0373 /* DefineStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefineStrings.swift; sourceTree = "<group>"; };
+		8D9249B31F4B38C4007A0373 /* UIViewGestureExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewGestureExtension.swift; sourceTree = "<group>"; };
+		8D9249B51F4B3966007A0373 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		8D9249B71F4B3E61007A0373 /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +144,7 @@
 		8D9249681F4B2391007A0373 /* Defines */ = {
 			isa = PBXGroup;
 			children = (
+				8D9249B11F4B3700007A0373 /* DefineStrings.swift */,
 			);
 			path = Defines;
 			sourceTree = "<group>";
@@ -138,8 +152,10 @@
 		8D9249691F4B2391007A0373 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8D9249B31F4B38C4007A0373 /* UIViewGestureExtension.swift */,
 				8D9249861F4B25CA007A0373 /* NSObjectExtension.swift */,
 				8D9249871F4B25CA007A0373 /* UITableViewCellExtension.swift */,
+				8D9249B51F4B3966007A0373 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -155,6 +171,7 @@
 		8D92496C1F4B2391007A0373 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8D9249B71F4B3E61007A0373 /* MainModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +255,9 @@
 		8D9249911F4B2A38007A0373 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8D9249AB1F4B344F007A0373 /* ic_manu.png */,
+				8D9249AC1F4B344F007A0373 /* ic_manu@2x.png */,
+				8D9249AD1F4B344F007A0373 /* ic_manu@3x.png */,
 				8D9249921F4B2A38007A0373 /* ic_addPerson.png */,
 				8D9249931F4B2A38007A0373 /* ic_addPerson@2x.png */,
 				8D9249941F4B2A38007A0373 /* ic_addPerson@3x.png */,
@@ -325,10 +345,12 @@
 				8D92499C1F4B2A38007A0373 /* ic_back@2x.png in Resources */,
 				8D92499B1F4B2A38007A0373 /* ic_back.png in Resources */,
 				8D9249991F4B2A38007A0373 /* ic_addPerson@2x.png in Resources */,
+				8D9249AE1F4B344F007A0373 /* ic_manu.png in Resources */,
 				8D92499A1F4B2A38007A0373 /* ic_addPerson@3x.png in Resources */,
-				8D9249781F4B2391007A0373 /* Info.plist in Resources */,
+				8D9249B01F4B344F007A0373 /* ic_manu@3x.png in Resources */,
 				8D9249981F4B2A38007A0373 /* ic_addPerson.png in Resources */,
 				8D92497B1F4B2391007A0373 /* Main.storyboard in Resources */,
+				8D9249AF1F4B344F007A0373 /* ic_manu@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,11 +363,15 @@
 			files = (
 				8D92498F1F4B2619007A0373 /* AppFont.swift in Sources */,
 				8D9249761F4B2391007A0373 /* AppDelegate.swift in Sources */,
+				8D9249B21F4B3700007A0373 /* DefineStrings.swift in Sources */,
 				8D9249881F4B25CA007A0373 /* NSObjectExtension.swift in Sources */,
+				8D9249B41F4B38C4007A0373 /* UIViewGestureExtension.swift in Sources */,
 				8D92497D1F4B2442007A0373 /* BaseViewController.swift in Sources */,
 				8D92498E1F4B2619007A0373 /* AppColor.swift in Sources */,
 				8D9249A41F4B2C9E007A0373 /* MainViewModel.swift in Sources */,
 				8D9249891F4B25CA007A0373 /* UITableViewCellExtension.swift in Sources */,
+				8D9249B61F4B3966007A0373 /* UIViewControllerExtension.swift in Sources */,
+				8D9249B81F4B3E61007A0373 /* MainModel.swift in Sources */,
 				8D92497F1F4B246C007A0373 /* BaseNavigationController.swift in Sources */,
 				8D9249841F4B24B0007A0373 /* MainViewController.swift in Sources */,
 				8D9249A11F4B2C2F007A0373 /* MainCell.swift in Sources */,

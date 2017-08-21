@@ -25,7 +25,7 @@ class MainViewController: BaseViewController {
 extension MainViewController {
     
     fileprivate func configureMainView() {
-        self.title = "Friend List"
+        self.title = "Football Clubs"
         self.configureTableView()
     }
     
@@ -48,6 +48,27 @@ extension MainViewController {
     }
     
     @objc fileprivate func addPerson() {
-        print("Press button add person")
+        let alert = UIAlertController(title: "New Club", message: "Add a new football club", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [unowned self] action in
+            guard let textField = alert.textFields?.first, let nameToSave = textField.text else {
+                return
+            }
+            self.modelView.nameArray.append(nameToSave)
+            self.tableView?.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        
+        alert.addTextField()
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
     }
 }
+
+
+
+
+
+

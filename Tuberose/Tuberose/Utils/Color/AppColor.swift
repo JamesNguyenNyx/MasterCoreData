@@ -27,7 +27,7 @@ struct AppColor {
     static let lightGreen = color(r: 72, g: 149, b: 140)
     static let darkGreen = color(r: 55, g: 95, b: 97)
     static let mainGreen = color(r: 0, g: 79, b: 104)
-    static let grayBorder = color(r: 236, g: 241, b: 243)
+    static let hightLight = color(r: 0, g: 79, b: 104, alpha: 0.5)
     
     static let clear = UIColor.clear
 }
