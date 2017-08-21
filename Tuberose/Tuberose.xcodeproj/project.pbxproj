@@ -35,6 +35,10 @@
 		8D9249B41F4B38C4007A0373 /* UIViewGestureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9249B31F4B38C4007A0373 /* UIViewGestureExtension.swift */; };
 		8D9249B61F4B3966007A0373 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9249B51F4B3966007A0373 /* UIViewControllerExtension.swift */; };
 		8D9249B81F4B3E61007A0373 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9249B71F4B3E61007A0373 /* MainModel.swift */; };
+		8D9249BE1F4B491E007A0373 /* ic_premier_league.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9249BB1F4B491E007A0373 /* ic_premier_league.png */; };
+		8D9249BF1F4B491E007A0373 /* ic_premier_league@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9249BC1F4B491E007A0373 /* ic_premier_league@2x.png */; };
+		8D9249C01F4B491E007A0373 /* ic_premier_league@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9249BD1F4B491E007A0373 /* ic_premier_league@3x.png */; };
+		8D9249C41F4B4A72007A0373 /* Tuberose.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D9249C21F4B4A72007A0373 /* Tuberose.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		8D9249B31F4B38C4007A0373 /* UIViewGestureExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewGestureExtension.swift; sourceTree = "<group>"; };
 		8D9249B51F4B3966007A0373 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		8D9249B71F4B3E61007A0373 /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		8D9249BB1F4B491E007A0373 /* ic_premier_league.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_premier_league.png; sourceTree = "<group>"; };
+		8D9249BC1F4B491E007A0373 /* ic_premier_league@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_premier_league@2x.png"; sourceTree = "<group>"; };
+		8D9249BD1F4B491E007A0373 /* ic_premier_league@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_premier_league@3x.png"; sourceTree = "<group>"; };
+		8D9249C31F4B4A72007A0373 /* Tuberose.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tuberose.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,7 @@
 		8D9249501F4B1FF4007A0373 /* Tuberose */ = {
 			isa = PBXGroup;
 			children = (
+				8D9249C11F4B4A2E007A0373 /* CoreData */,
 				8D9249631F4B2391007A0373 /* AppDelegate */,
 				8D9249651F4B2391007A0373 /* Base */,
 				8D9249661F4B2391007A0373 /* Controller */,
@@ -255,6 +264,9 @@
 		8D9249911F4B2A38007A0373 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8D9249BB1F4B491E007A0373 /* ic_premier_league.png */,
+				8D9249BC1F4B491E007A0373 /* ic_premier_league@2x.png */,
+				8D9249BD1F4B491E007A0373 /* ic_premier_league@3x.png */,
 				8D9249AB1F4B344F007A0373 /* ic_manu.png */,
 				8D9249AC1F4B344F007A0373 /* ic_manu@2x.png */,
 				8D9249AD1F4B344F007A0373 /* ic_manu@3x.png */,
@@ -275,6 +287,14 @@
 				8D9249A01F4B2C2F007A0373 /* MainCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8D9249C11F4B4A2E007A0373 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8D9249C21F4B4A72007A0373 /* Tuberose.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,14 +360,17 @@
 				8D92499D1F4B2A38007A0373 /* ic_back@3x.png in Resources */,
 				8D92497A1F4B2391007A0373 /* LaunchScreen.storyboard in Resources */,
 				8D9249A21F4B2C2F007A0373 /* MainCell.xib in Resources */,
+				8D9249BE1F4B491E007A0373 /* ic_premier_league.png in Resources */,
 				8D9249791F4B2391007A0373 /* Assets.xcassets in Resources */,
 				8D9249851F4B24B0007A0373 /* MainViewController.xib in Resources */,
+				8D9249BF1F4B491E007A0373 /* ic_premier_league@2x.png in Resources */,
 				8D92499C1F4B2A38007A0373 /* ic_back@2x.png in Resources */,
 				8D92499B1F4B2A38007A0373 /* ic_back.png in Resources */,
 				8D9249991F4B2A38007A0373 /* ic_addPerson@2x.png in Resources */,
 				8D9249AE1F4B344F007A0373 /* ic_manu.png in Resources */,
 				8D92499A1F4B2A38007A0373 /* ic_addPerson@3x.png in Resources */,
 				8D9249B01F4B344F007A0373 /* ic_manu@3x.png in Resources */,
+				8D9249C01F4B491E007A0373 /* ic_premier_league@3x.png in Resources */,
 				8D9249981F4B2A38007A0373 /* ic_addPerson.png in Resources */,
 				8D92497B1F4B2391007A0373 /* Main.storyboard in Resources */,
 				8D9249AF1F4B344F007A0373 /* ic_manu@2x.png in Resources */,
@@ -373,6 +396,7 @@
 				8D9249B61F4B3966007A0373 /* UIViewControllerExtension.swift in Sources */,
 				8D9249B81F4B3E61007A0373 /* MainModel.swift in Sources */,
 				8D92497F1F4B246C007A0373 /* BaseNavigationController.swift in Sources */,
+				8D9249C41F4B4A72007A0373 /* Tuberose.xcdatamodeld in Sources */,
 				8D9249841F4B24B0007A0373 /* MainViewController.swift in Sources */,
 				8D9249A11F4B2C2F007A0373 /* MainCell.swift in Sources */,
 			);
@@ -501,7 +525,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MJH3NZ4PKT;
 				INFOPLIST_FILE = "$(SRCROOT)/Tuberose/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nyx.Tuberose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,7 +539,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MJH3NZ4PKT;
 				INFOPLIST_FILE = "$(SRCROOT)/Tuberose/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nyx.Tuberose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -544,6 +568,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8D9249C21F4B4A72007A0373 /* Tuberose.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8D9249C31F4B4A72007A0373 /* Tuberose.xcdatamodel */,
+			);
+			currentVersion = 8D9249C31F4B4A72007A0373 /* Tuberose.xcdatamodel */;
+			path = Tuberose.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8D9249461F4B1FF4007A0373 /* Project object */;
 }

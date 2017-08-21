@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="357" height="96"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_manu.png" translatesAutoresizingMaskIntoConstraints="NO" id="WzS-kt-pjh">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_premier_league.png" translatesAutoresizingMaskIntoConstraints="NO" id="WzS-kt-pjh">
                         <rect key="frame" x="28" y="21" width="55" height="55"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="55" id="PSF-Mq-3zA"/>
@@ -33,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="England football club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cK4-RI-HVB" userLabel="SubLabel">
-                        <rect key="frame" x="103" y="51" width="226" height="20"/>
+                        <rect key="frame" x="103" y="50" width="226" height="20"/>
                         <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -59,6 +59,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_manu.png" width="55" height="55"/>
+        <image name="ic_premier_league.png" width="55" height="55"/>
     </resources>
 </document>

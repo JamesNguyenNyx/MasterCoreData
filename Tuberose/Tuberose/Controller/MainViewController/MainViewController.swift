@@ -7,17 +7,36 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: BaseViewController {
     
     @IBOutlet fileprivate weak var tableView: UITableView?
     
     fileprivate var modelView = MainViewModel()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureMainView()
         self.configureNavigation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FootballClub")
+        do {
+            modelView.clubs = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
 }
 
@@ -53,7 +72,7 @@ extension MainViewController {
             guard let textField = alert.textFields?.first, let nameToSave = textField.text else {
                 return
             }
-            self.modelView.nameArray.append(nameToSave)
+            self.save(name: nameToSave)
             self.tableView?.reloadData()
         }
         
@@ -65,6 +84,30 @@ extension MainViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    func save(name: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "FootballClub",
+                                                in: managedContext)!
+        
+        let person = NSManagedObject(entity: entity,
+                                     insertInto: managedContext)
+        
+        person.setValue(name, forKeyPath: "name_club")
+        
+        do {
+            try managedContext.save()
+            modelView.clubs.append(person)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+
 }
 
 

@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewModel: NSObject {
     
-    var nameArray: [String] = []
+    var clubs: [NSManagedObject] = []
     
     override init() {
         super.init()
@@ -22,14 +23,14 @@ class MainViewModel: NSObject {
 extension MainViewModel: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameArray.count
+        return clubs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let club = clubs[indexPath.row]
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: MainCell.identifier, for: indexPath) as? MainCell {
-            if indexPath.row < nameArray.count {
-                cell.mainTitle?.text = nameArray[indexPath.row]
-            }
+            cell.mainTitle?.text = club.value(forKeyPath: "name_club") as? String
             return cell
         }
         return UITableViewCell()
