@@ -33,9 +33,9 @@ fileprivate extension AppDelegate {
     
     fileprivate func configureLogin() {
         if isLogin() {
-            
+            configureRootViewController()
         } else {
-            
+            setRootAuthenticationViewController()
         }
     }
     

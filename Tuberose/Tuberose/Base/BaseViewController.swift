@@ -12,24 +12,37 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.configureNavigation()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+//MARK: Extension
+extension BaseViewController {
+    
+    fileprivate func configureNavigation() {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: AppColor.blue]
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Hiragino Sans W3", size: 17.0)!]
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func backButtonOnNavigationBar(show: Bool) {
+        let button = UIButton.init(type: .custom)
+        button.setImage(UIImage.init(named: "ic_back.png"), for: UIControlState.normal)
+        button.addTarget(self, action:#selector(BaseViewController.showBackButton), for: UIControlEvents.touchUpInside)
+        button.frame = CGRect.init(x: 0, y: 0, width: 25, height: 25)
+        let barButton = UIBarButtonItem.init(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
     }
-    */
-
+    
+    @objc fileprivate func showBackButton() {
+        if ((self.presentingViewController) != nil) {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
 }
