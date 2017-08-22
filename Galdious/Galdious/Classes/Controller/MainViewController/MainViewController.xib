@@ -13,6 +13,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Galdious" customModuleProvider="target">
             <connections>
                 <outlet property="cornerView" destination="XTB-dh-X2s" id="ane-MJ-64X"/>
+                <outlet property="imageView" destination="arO-2c-nvs" id="2oa-0F-BNU"/>
+                <outlet property="lastWornLabel" destination="kkH-RD-6Ol" id="d8T-Kt-EOZ"/>
+                <outlet property="nameLabel" destination="joA-dK-1Nn" id="lo3-c7-y2e"/>
+                <outlet property="ratingLabel" destination="LSo-4i-l3v" id="qsX-eM-mNM"/>
+                <outlet property="segmentedControl" destination="Tb3-tt-GG9" id="5RI-OP-SA5"/>
+                <outlet property="timesWornLabel" destination="TBi-bO-t8K" id="2rK-HN-rPt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,7 +51,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="290" height="272"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nike Runer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joA-dK-1Nn">
-                                    <rect key="frame" x="15" y="10" width="260" height="61"/>
+                                    <rect key="frame" x="15" y="0.0" width="260" height="61"/>
                                     <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -120,7 +126,7 @@
                                 <constraint firstItem="arO-2c-nvs" firstAttribute="top" secondItem="XTB-dh-X2s" secondAttribute="top" id="lIv-t6-k0k"/>
                                 <constraint firstItem="arO-2c-nvs" firstAttribute="leading" secondItem="XTB-dh-X2s" secondAttribute="leading" id="m9X-GU-uzh"/>
                                 <constraint firstItem="arO-2c-nvs" firstAttribute="height" secondItem="XTB-dh-X2s" secondAttribute="height" multiplier="4:5" id="tT8-oa-ryD"/>
-                                <constraint firstItem="joA-dK-1Nn" firstAttribute="top" secondItem="XTB-dh-X2s" secondAttribute="top" constant="10" id="tgK-kN-NoE"/>
+                                <constraint firstItem="joA-dK-1Nn" firstAttribute="top" secondItem="XTB-dh-X2s" secondAttribute="top" id="tgK-kN-NoE"/>
                                 <constraint firstAttribute="bottom" secondItem="dnS-3G-cst" secondAttribute="bottom" id="wuv-PB-1kh"/>
                                 <constraint firstAttribute="trailing" secondItem="dnS-3G-cst" secondAttribute="trailing" id="y24-es-zoH"/>
                             </constraints>

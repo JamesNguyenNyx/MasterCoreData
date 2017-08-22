@@ -16,8 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         self.configureLogin()
+        guard let vc = window?.rootViewController as? MainViewController else {
+            return true
+        }
+        
+        
+        vc.managedContext = persistentContainer.viewContext
+        
         return true
     }
     
@@ -45,6 +51,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        self.saveContext()
     }
 }
 
