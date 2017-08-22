@@ -11,7 +11,7 @@ import CoreData
 
 class MainViewController: BaseViewController {
     
-    @IBOutlet fileprivate weak var tableView: UITableView?
+    @IBOutlet fileprivate weak var cornerView: UIView?
     
     fileprivate var modelView = MainViewModel()
     
@@ -19,24 +19,6 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureMainView()
-        self.configureNavigation()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FootballClub")
-        do {
-            modelView.clubs = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
     }
 }
 
@@ -44,70 +26,39 @@ class MainViewController: BaseViewController {
 extension MainViewController {
     
     fileprivate func configureMainView() {
-        self.title = "Football Clubs"
-        self.configureTableView()
-    }
-    
-    fileprivate func configureTableView() {
-        self.tableView?.dataSource = modelView
-        self.tableView?.delegate = modelView
-        tableView?.estimatedRowHeight = 100
-        tableView?.tableFooterView = UIView()
-        tableView?.rowHeight = UITableViewAutomaticDimension
-        tableView?.register(MainCell.nib, forCellReuseIdentifier: MainCell.identifier)
+        self.configureNavigation()
+        let logo = UIImage(named: "ic_nike.png")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        
+        self.cornerView?.layer.cornerRadius = 5
+        self.cornerView?.clipsToBounds = true
     }
     
     fileprivate func configureNavigation() {
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage.init(named: "ic_addPerson.png"), for: UIControlState.normal)
-        button.addTarget(self, action:#selector(MainViewController.addPerson), for: UIControlEvents.touchUpInside)
-        button.frame = CGRect.init(x: 0, y: 0, width: 25, height: 25)
+        button.setImage(UIImage.init(named: "ic_rating.png"), for: UIControlState.normal)
+        button.addTarget(self, action:#selector(MainViewController.addRating), for: UIControlEvents.touchUpInside)
+        button.frame = CGRect.init(x: 0, y: 0, width: 22, height: 22)
         let barButton = UIBarButtonItem.init(customView: button)
         self.navigationItem.rightBarButtonItem = barButton
+        
+        
+        let leftButton = UIButton.init(type: .custom)
+        leftButton.setImage(UIImage.init(named: "ic_tag.png"), for: .normal)
+        leftButton.addTarget(self, action: #selector(MainViewController.addWearNumber), for: .touchUpInside)
+        leftButton.frame = CGRect.init(x: 0, y: 0, width: 22, height: 22)
+        let leftBar = UIBarButtonItem.init(customView: leftButton)
+        self.navigationItem.leftBarButtonItem = leftBar
     }
     
-    @objc fileprivate func addPerson() {
-        let alert = UIAlertController(title: "New Club", message: "Add a new football club", preferredStyle: .alert)
-        let saveAction = UIAlertAction(title: "Save", style: .default) { [unowned self] action in
-            guard let textField = alert.textFields?.first, let nameToSave = textField.text else {
-                return
-            }
-            self.save(name: nameToSave)
-            self.tableView?.reloadData()
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-        
-        alert.addTextField()
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)
+    @objc fileprivate func addRating() {
+        print("Press to Rating button")
     }
     
-    func save(name: String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "FootballClub",
-                                                in: managedContext)!
-        
-        let person = NSManagedObject(entity: entity,
-                                     insertInto: managedContext)
-        
-        person.setValue(name, forKeyPath: "name_club")
-        
-        do {
-            try managedContext.save()
-            modelView.clubs.append(person)
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
+    @objc fileprivate func addWearNumber() {
+        print("Press to Wear button")
     }
-
 }
 
 
