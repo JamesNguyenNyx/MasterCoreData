@@ -21,28 +21,28 @@ class MainViewController: BaseViewController {
 //    @IBOutlet weak var favoriteLabel: UILabel!
     
     fileprivate var modelView = MainViewModel()
-    var managedContext: NSManagedObjectContext!
-    var currentNikeShoe: NikeShoes!
+    var managedContext: NSManagedObjectContext?
+    var currentNikeShoe: NikeShoes?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureMainView()
         
-        let request = NSFetchRequest<NikeShoes>(entityName: "NikeShoes")
-        let firstTitle = segmentedControl.titleForSegment(at: 0)!
-        request.predicate = NSPredicate(format: "searchKey == %@", firstTitle)
-        
-        do {
-            let results = try managedContext.fetch(request)
-            currentNikeShoe = results.first
-            
-            populate(shoe: results.first!)
-            
-        } catch let error as NSError {
-            
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
+//        let request = NSFetchRequest<NikeShoes>(entityName: "NikeShoes")
+//        let firstTitle = segmentedControl.titleForSegment(at: 0)!
+//        request.predicate = NSPredicate(format: "searchKey == %@", firstTitle)
+//        
+//        do {
+//            let results = try managedContext?.fetch(request)
+//            currentNikeShoe = results?.first
+//            
+//            populate(shoe: (results?.first!)!)
+//            
+//        } catch let error as NSError {
+//            
+//            print("Could not fetch \(error), \(error.userInfo)")
+//        }
     }
     
     func populate(shoe: NikeShoes) {
@@ -95,9 +95,9 @@ extension MainViewController {
         request.predicate = NSPredicate(format: "searchKey == %@", selectedValue!)
         
         do {
-            let results =  try managedContext.fetch(request)
-            currentNikeShoe =  results.first
-            populate(shoe: currentNikeShoe)
+            let results =  try managedContext?.fetch(request)
+            currentNikeShoe =  results?.first
+            populate(shoe: currentNikeShoe!)
             
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
@@ -151,15 +151,15 @@ extension MainViewController {
     }
     
     @objc fileprivate func addWearNumber(_ sender: AnyObject) {
-        let times = currentNikeShoe.timesWorn
-        currentNikeShoe.timesWorn = times + 1
+        let times = currentNikeShoe?.timesWorn
+        currentNikeShoe?.timesWorn = times! + 1
         
-        currentNikeShoe.lastWorn = NSDate()
+        currentNikeShoe?.lastWorn = NSDate()
         
         do {
             
-            try managedContext.save()
-            populate(shoe: currentNikeShoe)
+            try managedContext?.save()
+            populate(shoe: currentNikeShoe!)
             
         } catch let error as NSError {
             
@@ -176,16 +176,16 @@ extension MainViewController {
         
         do {
             
-            currentNikeShoe.rating = rating
-            try managedContext.save()
-            populate(shoe: currentNikeShoe)
+            currentNikeShoe?.rating = rating
+            try managedContext?.save()
+            populate(shoe: currentNikeShoe!)
             
         } catch let error as NSError {
             
             if error.domain == NSCocoaErrorDomain &&
                 (error.code == NSValidationNumberTooLargeError ||
                     error.code == NSValidationNumberTooSmallError) {
-                addRating(currentNikeShoe)
+                addRating(currentNikeShoe!)
             } else {
                 print("Could not save \(error), \(error.userInfo)")
             }
@@ -196,9 +196,9 @@ extension MainViewController {
         let fetch = NSFetchRequest<NikeShoes>(entityName: "NikeShoes")
         fetch.predicate = NSPredicate(format: "searchKey != nil")
         
-        let count = try! managedContext.count(for: fetch)
+        let count = try! managedContext?.count(for: fetch)
         
-        if count > 0 {
+        if count! > 0 {
             // SampleData.plist data already in Core Data
             return
         }
@@ -208,7 +208,7 @@ extension MainViewController {
         
         for dict in dataArray {
             let entity = NSEntityDescription.entity(forEntityName: "Bowtie",
-                                                    in: managedContext)!
+                                                    in: managedContext!)!
             let bowtie = NikeShoes(entity: entity, insertInto: managedContext)
             let btDict = dict as! [String: AnyObject]
             
@@ -229,7 +229,7 @@ extension MainViewController {
             bowtie.isFavorite = btDict["isFavorite"] as! Bool
         }
         
-        try! managedContext.save()
+        try! managedContext?.save()
     }
 
 

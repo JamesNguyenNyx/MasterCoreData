@@ -43,6 +43,9 @@
                                 <segment title="Phelon"/>
                             </segments>
                             <color key="tintColor" red="0.26274509800000001" green="0.37254901959999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="segmentedControl:" destination="-1" eventType="touchUpInside" id="CXJ-bS-rI8"/>
+                            </connections>
                         </segmentedControl>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTB-dh-X2s" userLabel="ContentView">
                             <rect key="frame" x="15" y="73" width="290" height="341"/>
